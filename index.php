@@ -35,14 +35,7 @@ include("components/head.php");
                         <div class="cont-i-form"><i class="far fa-user-circle"></i></div>
                         <input class="inp-comun " type="text" value="" name="apellido" placeholder="Apellido"><br>
                     </div>
-                    
-                    <div class="col-12 sinNada cont-inp-form">
-                        <div class="cont-i-form"><i class="far fa-user-circle"></i></div>
-                        <input class="inp-comun " type="text" value="" name="apellido" placeholder="Apellido"><br>
-                    </div>
-                    
-                   
-                    
+  
                     <div class="col-12 sinNada cont-sexo-reg">
                         <label>Sexo</label>
                         <label class="radio">Hombre
