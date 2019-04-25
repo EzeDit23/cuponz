@@ -90,12 +90,28 @@ include("components/menu.php");
                         $nombre = $dato['nombre'];
                         $porcentaje = $dato['porcentaje'];
                         $empresa = $dato['id_empresa'];
-                            echo "<span class='tit-codigo'><b>CODIGO:  $codigo</span></b>";
-                            echo "<div class='linea-cupon'></div>";
-                            echo "<span class='nombre-cupon'>$nombre<br>$empresa</span><br>";
-                            echo "<p class='porcentaje-cupon'>$porcentaje% de descuento</p>";
+
+                        $mostrarEmp = "SELECT * FROM `empresas` WHERE id_empresa=$empresa";
+                        // 3. Ejecutar la query
+                        $query_mostrarEmp = mysqli_query(
+                            $conexion, $mostrarEmp
+                        );
+
+                            while($dato = mysqli_fetch_array($query_mostrarEmp)) {
+                                $nombreEmp = $dato['nombre'];
+    
+                            
+
+   
+                        echo "<span class='tit-codigo'><b>CODIGO: $codigo</b></span>";
+                        echo "<div class='linea-cupon'></div>";
+                        echo "<span class='nombre-cupon'>$nombre<br>$nombreEmp</span><br>";
+                        echo "<p class='porcentaje-cupon'>$porcentaje% de descuento</p>";
                         echo "</div>";
                         echo "</a>";
+                        
+
+                    }
                     }
                 }
             

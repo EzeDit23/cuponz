@@ -50,11 +50,21 @@ while($dato = mysqli_fetch_array($select_queryDes)) {
     $empresa = $dato['id_empresa'];
     $categoria = $dato['categoria'];
 
+    $mostrarEmp = "SELECT * FROM `empresas` WHERE id_empresa=$empresa";
+    // 3. Ejecutar la query
+    $query_mostrarEmp = mysqli_query(
+        $conexion, $mostrarEmp
+    );
+
+        while($dato = mysqli_fetch_array($query_mostrarEmp)) {
+            $nombreEmp = $dato['nombre'];
+        
+
     echo "<h1 class='tit-cupon'>$nombre </h1>";   
     echo "<h2 class='porc-cupon'>$porcentaje% de descuento</h2>";
     echo "<h1 class='code-cupon'>$code </h1>";
-    echo "<h2 class='prom-empresa'>$empresa </h2>";
-
+    echo "<h2 class='prom-empresa'>$nombreEmp </h2>";
+    }
     while($dato = mysqli_fetch_array($select_queryVec)) {
             $nombreVec = $dato['nombre'];
             $apellido = $dato['apellido'];
