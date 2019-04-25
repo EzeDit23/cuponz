@@ -47,7 +47,7 @@ while($dato = mysqli_fetch_array($select_queryDes)) {
     $id_descuento = $dato['id_descuento'];
     $porcentaje = $dato['porcentaje'];
     $nombre = $dato['nombre'];
-    $empresa = $dato['empresa'];
+    $empresa = $dato['id_empresa'];
     $categoria = $dato['categoria'];
 
     echo "<h1 class='tit-cupon'>$nombre </h1>";   

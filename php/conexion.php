@@ -5,7 +5,7 @@
 				"localhost",
 				"root",
 				"",
-				"recrea"
+				"recrea2"
 				);
 ?>
 

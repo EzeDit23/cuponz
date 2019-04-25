@@ -89,7 +89,7 @@ include("components/menu.php");
                         $id_descuento = $dato['id_descuento'];
                         $nombre = $dato['nombre'];
                         $porcentaje = $dato['porcentaje'];
-                        $empresa = $dato['empresa'];
+                        $empresa = $dato['id_empresa'];
                             echo "<span class='tit-codigo'><b>CODIGO:  $codigo</span></b>";
                             echo "<div class='linea-cupon'></div>";
                             echo "<span class='nombre-cupon'>$nombre<br>$empresa</span><br>";

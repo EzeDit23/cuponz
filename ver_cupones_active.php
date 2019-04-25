@@ -51,6 +51,8 @@ include("components/menu.php");
 
             if($estado = "si"){
 
+                
+
                 echo "<a href='cupon.php?id_cupon=$id_cupon' class='col-12 sinNada classMostrar'>";
                 echo "<div class='cupon-item'>";
          
@@ -86,13 +88,27 @@ include("components/menu.php");
                         $id_descuento = $dato['id_descuento'];
                         $nombre = $dato['nombre'];
                         $porcentaje = $dato['porcentaje'];
-                        $empresa = $dato['empresa'];
-                            echo "<span class='tit-codigo'><b>CODIGO: $codigo</b></span>";
-                            echo "<div class='linea-cupon'></div>";
-                            echo "<span class='nombre-cupon'>$nombre<br>$empresa</span><br>";
-                            echo "<p class='porcentaje-cupon'>$porcentaje% de descuento</p>";
+                        $empresa = $dato['id_empresa'];
+
+                        $mostrarEmp = "SELECT * FROM `empresas` WHERE id_empresa=$empresa";
+                        // 3. Ejecutar la query
+                        $query_mostrarEmp = mysqli_query(
+                            $conexion, $mostrarEmp
+                        );
+
+                            while($dato = mysqli_fetch_array($query_mostrarEmp)) {
+                                $nombreEmp = $dato['nombre'];
+    
+                            
+
+   
+                        echo "<span class='tit-codigo'><b>CODIGO: $codigo</b></span>";
+                        echo "<div class='linea-cupon'></div>";
+                        echo "<span class='nombre-cupon'>$nombre<br>$nombreEmp</span><br>";
+                        echo "<p class='porcentaje-cupon'>$porcentaje% de descuento</p>";
                         echo "</div>";
                         echo "</a>";
+                    }
                     }
                 }
             
