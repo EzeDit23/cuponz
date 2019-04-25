@@ -55,6 +55,161 @@ button:focus{
     color: #f7c83c;
     border-color:#f7c83c;
 }
+/*Registro*/
+
+.registro{
+    background-color: #f7c83c;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+}
+
+.cont-reg{
+    padding-top: 60px!important;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    background: #f7c83c;
+    height: 100%;
+    margin: auto;
+    width: 90%;
+}
+.reg-tit{
+    margin-top: 20px;
+}
+.reg-tit h1{
+    text-align: center;
+    color: #86498c;
+    font-size: 20px!important;
+}
+
+#btn-login-reg{
+    background-color: #86498c;
+    border: none;
+    color: white;
+    height: 45px;
+    border-radius: 8px;
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+.radio {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* hide the browser's default radio button */
+.radio input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* create custom radio */
+.radio .check {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    height: 15px;
+    width: 15px;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+}
+
+/* on mouse-over, add border color */
+.radio:hover input ~ .check {
+    border: 1px solid #93772d;
+}
+
+/* add background color when the radio is checked */
+.radio input:checked ~ .check {
+    background-color: #93772d;
+    border:none;
+}
+
+/* create the radio and hide when not checked */
+.radio .check:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* show the radio when checked */
+.radio input:checked ~ .check:after {
+    display: block;
+}
+
+/* radio style */
+.radio .check:after {
+    top: 9px;
+    left: 9px;
+    width: 0px;
+    height: 0px;
+    border-radius: 50%;
+    background: white;
+}
+
+.cont-sexo-reg{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+}
+.cont-sexo-reg label{
+    font-size: 20px;
+}
+.cont-inp-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cont-i-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    width: 48px!important;
+    min-width: 48px;
+    max-width: 48px;
+    background-color: #86498c;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+.cont-i-form i{
+    color: #ffeeaa;
+}
+.cont-form-reg .inp-comun{
+    width: 100%;
+    background-color: #ffeeaa;
+    color: #86498c!important;
+    padding-left: 8px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: 45px;
+    border: none; 
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    font-size: 20px;
+}
+.cont-form-reg .inp-comun::placeholder{
+    font-size: 20px;
+    color: #93772d!important;
+}
 /*ganador*/
 
 .fondoGanador{
@@ -384,7 +539,7 @@ button:focus{
     border-radius: 8px;
     padding-left: 8px;
     border: none;
-    background-color: #fee580!important;
+    background-color: #ffeeaa!important;
     color: #93772d;
     font-size: 20px;
 }
@@ -540,7 +695,7 @@ button:focus{
     align-content: center;
     align-items: center;
     width: 80%;
-    background-color: #fee580;
+    background-color: #ffeeaa;
     border-radius: 8px;
     padding: 25px;
 }
