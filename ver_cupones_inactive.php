@@ -4,20 +4,10 @@ $sw_estado = "si";
 
 include("php/conexion.php");
 include("php/sesion.php");
+include("components/head.php");
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/estilos.css">
-    <title>Document</title>
-</head>
 <body>
 
 <?php
@@ -59,7 +49,13 @@ include("components/menu.php");
             $estadoCss = "";
 
             if($estado = "no"){
-                echo "<a href='cupon.php?id_cupon=$id_cupon' class='col-12 sinNada classMostrar'>";
+                echo "<a href='cupon.php?id_cupon=$id_cupon' class='sinNada classMostrar cont-cupon'>";
+               
+                ?>
+                <div style="background: url('img/descuentos/pizza.jpg');
+                    background-size: cover;" class='img-Cupon-list'></div>
+                <?php
+ 
                 echo "<div class='cupon-item'>";
          
                 $mostrarCup = "SELECT * FROM `cupones` WHERE id_cupon=$id_cupon";
@@ -99,9 +95,6 @@ include("components/menu.php");
 
                             while($dato = mysqli_fetch_array($query_mostrarEmp)) {
                                 $nombreEmp = $dato['nombre'];
-    
-                            
-
    
                         echo "<span class='tit-codigo'><b>CODIGO: $codigo</b></span>";
                         echo "<div class='linea-cupon'></div>";
@@ -111,7 +104,7 @@ include("components/menu.php");
                         echo "</a>";
                         
 
-                    }
+                        }
                     }
                 }
             

@@ -51,9 +51,13 @@ include("components/menu.php");
 
             if($estado = "si"){
 
-                
-
-                echo "<a href='cupon.php?id_cupon=$id_cupon' class='col-12 sinNada classMostrar'>";
+                echo "<a href='cupon.php?id_cupon=$id_cupon' class='sinNada classMostrar cont-cupon'>";
+               
+                ?>
+                <div style="background: url('img/descuentos/pizza.jpg');
+                    background-size: cover;" class='img-Cupon-list'></div>
+                <?php
+ 
                 echo "<div class='cupon-item'>";
          
                 $mostrarCup = "SELECT * FROM `cupones` WHERE id_cupon=$id_cupon";
@@ -61,9 +65,7 @@ include("components/menu.php");
                 $query_mostrarCup = mysqli_query(
                             $conexion, $mostrarCup
                             );
-    
-                            
-            
+                
                 // 4. Verificar si funcionó
                 if($query_mostrarCup == true){
                     while($dato = mysqli_fetch_array($query_mostrarCup)) {
@@ -73,15 +75,12 @@ include("components/menu.php");
                     }
                 }
     
-    
                 $mostrarDes = "SELECT * FROM `descuentos` WHERE id_descuento=$id_descuento";
                 // 3. Ejecutar la query
                 $query_mostrarDes = mysqli_query(
                             $conexion, $mostrarDes
                             );
     
-                            
-            
                 // 4. Verificar si funcionó
                 if($query_mostrarDes == true){
                     while($dato = mysqli_fetch_array($query_mostrarDes)) {
@@ -99,16 +98,13 @@ include("components/menu.php");
                             while($dato = mysqli_fetch_array($query_mostrarEmp)) {
                                 $nombreEmp = $dato['nombre'];
     
-                            
-
-   
-                        echo "<span class='tit-codigo'><b>CODIGO: $codigo</b></span>";
-                        echo "<div class='linea-cupon'></div>";
-                        echo "<span class='nombre-cupon'>$nombre<br>$nombreEmp</span><br>";
-                        echo "<p class='porcentaje-cupon'>$porcentaje% de descuento</p>";
-                        echo "</div>";
-                        echo "</a>";
-                    }
+                            echo "<span class='tit-codigo'><b>CODIGO: $codigo</b></span>";
+                            echo "<div class='linea-cupon'></div>";
+                            echo "<span class='nombre-cupon'>$nombre<br>$nombreEmp</span><br>";
+                            echo "<p class='porcentaje-cupon'>$porcentaje% de descuento</p>";
+                            echo "</div>";
+                            echo "</a>";
+                        }
                     }
                 }
             
