@@ -412,6 +412,8 @@ a{
 .cont-datos-cup input{
     outline: none;
     background-color: transparent;
+    border-radius: 8px;
+    border: 2px solid rgb(204, 204, 204)!important;
     border-bottom: 2px solid rgb(204, 204, 204)!important;
     padding-left: 10px;
     height: 40px;
@@ -421,7 +423,8 @@ a{
 .cont-datos-cup select{
     outline: none;
     background-color: transparent;
-    border-bottom: 2px solid rgb(204, 204, 204)!important;
+    border-radius: 8px;
+    border: 2px solid rgb(204, 204, 204)!important;
     padding-left: 10px;
     height: 40px;
     border: none;
