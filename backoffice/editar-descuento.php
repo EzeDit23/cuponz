@@ -124,7 +124,7 @@
                                             </div>
 
                                             <div class="row sinNada cont-btns-edit">
-                                                <input class="btn-gral-input" type="submit" value="&#xf045; APLICAR CAMBIOS">          
+                                                <input style="font-family:Arial, FontAwesome" class="btn-gral-input" type="submit" value="&#xf045; APLICAR CAMBIOS">          
                                             </div>
                                         </div>
                                     </form>

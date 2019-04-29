@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-04-2019 a las 17:10:10
+-- Tiempo de generación: 29-04-2019 a las 22:46:32
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 7.3.1
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `recrea2`
+-- Base de datos: `recrea`
 --
 
 -- --------------------------------------------------------
@@ -88,7 +88,10 @@ INSERT INTO `cupones` (`id_cupon`, `codigo`, `id_vecino`, `id_descuento`, `estad
 (78, 'Z7ZLXO', 1, 3, 'si'),
 (79, '80QC16', 1, 1, 'si'),
 (80, 'LIQ2PS', 1, 2, 'si'),
-(81, 'BLT94E', 1, 2, 'si');
+(81, 'BLT94E', 1, 2, 'si'),
+(82, '4TXMFQ', 1, 1, 'si'),
+(83, '817ZSJ', 1, 1, 'si'),
+(84, 'VZAD61', 1, 1, 'si');
 
 -- --------------------------------------------------------
 
@@ -101,6 +104,9 @@ CREATE TABLE `descuentos` (
   `codigo` tinytext NOT NULL,
   `nombre` varchar(250) DEFAULT NULL,
   `porcentaje` int(6) DEFAULT NULL,
+  `sexo` varchar(10) NOT NULL,
+  `precio-real` int(50) NOT NULL,
+  `precio-desc` int(50) NOT NULL,
   `id_empresa` int(6) NOT NULL,
   `categoria` varchar(300) NOT NULL,
   `limite` int(6) DEFAULT NULL,
@@ -113,10 +119,10 @@ CREATE TABLE `descuentos` (
 -- Volcado de datos para la tabla `descuentos`
 --
 
-INSERT INTO `descuentos` (`id_descuento`, `codigo`, `nombre`, `porcentaje`, `id_empresa`, `categoria`, `limite`, `cantidad`, `mes`, `link`) VALUES
-(1, 'D8F7S5', '1 Grande de muzza', 50, 1, 'Gastronomia', 10, 10, 'Febrero', 'nose'),
-(2, 'D8S7Q5', '1 remera ', 40, 2, 'Indumentaria', 10, 10, 'febrero', 'nose'),
-(3, 'D8B2S4', '1 Corte masquilino', 20, 1, 'Belleza', 10, 10, 'febrero', 'nose');
+INSERT INTO `descuentos` (`id_descuento`, `codigo`, `nombre`, `porcentaje`, `sexo`, `precio-real`, `precio-desc`, `id_empresa`, `categoria`, `limite`, `cantidad`, `mes`, `link`) VALUES
+(1, 'D8F7S5', '1 Grande de muzza', 30, 'unisex', 200, 170, 1, 'Gastronomia', 10, 10, 'Febrero', 'nose'),
+(2, 'D8S7Q5', '1 remera ', 40, 'mujer', 0, 0, 2, 'Indumentaria', 10, 10, 'febrero', 'nose'),
+(3, 'D8B2S4', '1 Corte masquilino', 20, 'hombre', 0, 0, 1, 'Belleza', 10, 10, 'febrero', 'nose');
 
 -- --------------------------------------------------------
 
@@ -152,7 +158,7 @@ CREATE TABLE `empresas` (
 --
 
 INSERT INTO `empresas` (`id_empresa`, `nombre`, `categoria`, `status`, `estado`, `email`, `clave`, `localidad`, `direccion`, `numero`, `comentario`, `sitioweb`, `face`, `instagram`, `twitter`, `pinterest`, `logo`, `tipo_imagen`, `viriera`, `Plan`) VALUES
-(1, 'FootFad', '', '', NULL, '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', NULL),
+(1, 'FootFad', '', '', NULL, 'footfad@empresa.com', '4444', 'Villa Bosch', 'Santos Vega', '1576', 'piso 2', 'www.emrpesasitio.com', 'facebok.com/footfad', 'instagram.com/footfad', NULL, NULL, '', '', '', 'oro'),
 (2, 'Dafiti', '', '', NULL, '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', NULL),
 (3, 'Dafiti', '', '', NULL, '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', NULL),
 (4, 'Dafiti', '', '', NULL, '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', NULL),
@@ -194,7 +200,7 @@ CREATE TABLE `vecinos` (
 --
 
 INSERT INTO `vecinos` (`id`, `cant_des`, `email`, `clave`, `nombre`, `apellido`, `direccion`, `numero`) VALUES
-(1, 10, 'nada@gmail.com', '7777', 'Marcos', 'Dituri', 'campo de mayo 6249', 0),
+(1, 7, 'nada@gmail.com', '7777', 'Marcos', 'Dituri', 'campo de mayo 6249', 0),
 (2, 41, 'test@user.com', '555', 'Gonza', 'Lala', 'No se aun', 11454),
 (3, 33, 'orotest@user.com', '555', 'otrotest', 'po', 'No se aun', 11454);
 
@@ -251,7 +257,7 @@ ALTER TABLE `avisos`
 -- AUTO_INCREMENT de la tabla `cupones`
 --
 ALTER TABLE `cupones`
-  MODIFY `id_cupon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
+  MODIFY `id_cupon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
 
 --
 -- AUTO_INCREMENT de la tabla `descuentos`
