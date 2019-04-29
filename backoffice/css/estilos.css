@@ -6,6 +6,22 @@ p, a, h1, h2, h3, h4, span{
     color: #938a94;
 }
 
+.btn-gral-input{
+    cursor: pointer;
+    background-color: #653769!important;
+    color: white!important;
+    min-width: 200px!important;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 8px!important;
+    transition: all 1s!important;
+}
+.btn-gral-input:hover{
+    color: #f7c83c!important;
+    background-color: #653769!important;
+    transition: all 1s!important;
+}
+
 a{
     text-decoration: none!important;
 }
@@ -145,6 +161,8 @@ a{
 /*PANEL*/
 
 .p-menu{
+    height: 100vh;
+    max-height: 100%;
     background-color: #86498c;
 }
 .p-menu ul {
@@ -272,11 +290,14 @@ a{
     margin: auto;
 }
 .btn-gral{
+    padding-left: 20px;
+    padding-right: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #86498c;
-    width: 200px;
+    min-width: 200px;
+    width: 100%;
     text-align: center;
     color: white;
     height: 40px;;
@@ -289,6 +310,9 @@ a{
     color: #f7c83c;
 }
 
+.btn-gral i{
+    padding-right: 5px;
+}
 
 .p-tit{
     font-size: 30px;
@@ -330,7 +354,9 @@ a{
     padding: 20px;
 }
 .cont-foto-cup{
+    width: 200px!important;
     height: 100%;
+    background-size: cover;
 }
 .btn-panel{
     width: 100%;
@@ -359,4 +385,57 @@ a{
     padding-left: 10px!important;
     padding-right: 15px!important;
     justify-content: space-around!important;
+}
+.pre-desc{
+    text-decoration: line-through; 
+}
+
+/*EDITAR DESCUENTO*/
+
+.cont-promo-edit{
+    /*background-color: #fffaea;*/
+    border: 1px solid #f7c83c;
+}
+
+.cont-promo-edit b{
+    color: #653769;
+    font-size: 20px;
+}
+
+.cont-datos-cup input{
+    outline: none;
+    background-color: transparent;
+    border-bottom: 2px solid rgb(204, 204, 204)!important;
+    padding-left: 10px;
+    height: 40px;
+    border: none;
+    transition: all 1s;
+}
+.cont-datos-cup select{
+    outline: none;
+    background-color: transparent;
+    border-bottom: 2px solid rgb(204, 204, 204)!important;
+    padding-left: 10px;
+    height: 40px;
+    border: none;
+    transition: all 1s;
+}
+.cont-datos-cup select:hover, .cont-datos-cup input:hover{
+    border-bottom: 2px solid #653769!important;
+}
+.cont-edit-sec{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.txt-detalle{
+    padding-left: 40px;
+}
+.cont-btns-edit{
+    text-align: center;
+    margin: auto;
+    display: flex;
+    justify-content:center;
+    margin-top: 40px;
 }

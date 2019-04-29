@@ -65,6 +65,9 @@
                         $id_descuento = $dato['id_descuento'];
                         $nombreDescuento = $dato['nombre'];
                         $porcentaje = $dato['porcentaje'];
+                        $sexo = $dato['sexo'];
+                        $precio = $dato['precio-real'];
+                        $precio_desc = $dato['precio-desc'];
                         $id_empresa = $dato['id_empresa'];
                         $categoria = $dato['categoria'];
 
@@ -79,18 +82,21 @@
                                 <div class='col-7 sinNada'>
                                     <div class='row sinNada cont-datos-cup'>
                                         <div class='col-4 sinNada'><b>Promo:</b></div>
-                                        <div class='col-8 sinNada'><span> $nombreDescuento</span></div>
+                                        <div class='col-8 sinNada'><span><?php echo $nombreDescuento;?></span></div>
                                         <div class='col-4 sinNada'><b>Porcentaje:</b></div>
-                                        <div class='col-8 sinNada'><span>  $porcentaje% de descuento</span></div>
+                                        <div class='col-8 sinNada'><span><?php echo "$porcentaje%";?></span></div>
+                                        <div class='col-4 sinNada'><b>Precio:</b></div>
+                                        <div class='col-8 sinNada'><span><?php echo "$$precio_desc - ";?></span><span class="pre-desc"><?php echo "$$precio";?></span></div>
                                         <div class='col-4 sinNada'><b>Categoria:</b></div>
-                                        <div class='col-8 sinNada'><span>  $porcentaje% de descuento</span></div>
+                                        <div class='col-8 sinNada'><span><?php echo "$categoria";?></span></div>
+                                        <div class='col-4 sinNada'><b>Sexo:</b></div>
+                                        <div class='col-8 sinNada'><span><?php echo $sexo;?></span></div>
                                     </div>
-                                 
                                 </div>
                               
                                 <div class='col-2 sinNada'>
                                     <div class='row sinNada'>
-                                        <a class='btn-panel' href='#'><div class='col-12 sinNada'>EDITAR</div></a>
+                                        <?php echo "<a class='btn-panel' href='editar-descuento.php?id_descuento=$id_descuento'><div class='col-12 sinNada'>EDITAR</div></a>";?>
                                         <a class='btn-panel' href='#'><div class='col-12 sinNada'>ELIMINAR</div></a>
                                       
                                     </div>
