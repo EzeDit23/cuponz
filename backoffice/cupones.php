@@ -29,7 +29,7 @@
                         <th class="table-dato"><i class="fas fa-store"></i> Categoria</th>
                         <th class="table-dato-chico"><i class="fas fa-user"></i> Nombre</th>
                         <th class="table-dato-chico"><i class="fas fa-user-circle"></i> Apellido</th>
-                        <th class="table-dato"><i class="fas fa-user-circle"></i> Direccion</th>
+                        <th class="table-dato-grande"><i class="fas fa-map-marker-alt"></i> Direccion</th>
                     </tr>
                 </table>
 
@@ -104,7 +104,7 @@
                             <td class="table-dato"><?php echo $categoria;?></td>
                             <td class="table-dato-chico"><?php echo $nombreVec;?></td>
                             <td class="table-dato-chico"><?php echo $ApellidoVec;?></td>
-                            <td class="table-dato"><?php echo $direccion;?></td>
+                            <td class="table-dato-grande"><?php echo $direccion;?></td>
                             
                 
                         </tr>
