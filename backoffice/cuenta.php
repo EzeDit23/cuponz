@@ -17,7 +17,6 @@
     // 4. Verificar si funcionó
     if($mostrar_ej == true){
         while($dato = mysqli_fetch_array($mostrar_ej)) {
-       
             $id = $dato['id_empresa'];
             $nombre = $dato['nombre'];
             $categoria = $dato['categoria'];

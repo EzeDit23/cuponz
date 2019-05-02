@@ -18,13 +18,13 @@
             <a href=""><i class="fas fa-home"></i> INICIO</a>
         </li>
         <li>
-            <a href=""><i class="fas fa-ticket-alt"></i> CUPONES</a>
+            <a href="cupones.php"><i class="fas fa-ticket-alt"></i> CUPONES</a>
         </li>
         <li>
-            <a href=""><i class="fas fa-store"></i> MIS PROMOS</a>
+            <a href="mispromos.php"><i class="fas fa-store"></i> MIS PROMOS</a>
         </li>
         <li>
-            <a href=""><i class="fas fa-user-circle"></i> CUENTA</a>
+            <a href="cuenta.php"><i class="fas fa-user-circle"></i> CUENTA</a>
         </li>
 
     </ul>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-04-2019 a las 22:46:32
+-- Tiempo de generación: 02-05-2019 a las 18:07:57
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 7.3.1
 
@@ -54,6 +54,7 @@ CREATE TABLE `cupones` (
   `codigo` varchar(250) NOT NULL,
   `id_vecino` int(11) NOT NULL,
   `id_descuento` int(11) NOT NULL,
+  `id_empresa` int(50) DEFAULT NULL,
   `estado` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -61,37 +62,37 @@ CREATE TABLE `cupones` (
 -- Volcado de datos para la tabla `cupones`
 --
 
-INSERT INTO `cupones` (`id_cupon`, `codigo`, `id_vecino`, `id_descuento`, `estado`) VALUES
-(55, '2PXK0R', 1, 3, 'si'),
-(56, '78XWG7', 1, 1, 'si'),
-(57, 'F0IVQ3', 1, 1, 'no'),
-(58, 'YBUQR4', 1, 2, '0'),
-(59, 'BM2SHT', 1, 3, '0'),
-(60, 'A7LFHD', 2, 3, '0'),
-(61, 'N2JMH0', 2, 2, '0'),
-(62, 'JNKQXK', 2, 2, '0'),
-(63, 'MMFLG4', 2, 2, '0'),
-(64, 'O0B1IE', 2, 3, '0'),
-(65, 'IIQNBC', 2, 2, 'usada'),
-(66, 'ZWR7CN', 2, 3, 'vencida'),
-(67, 'M4GR73', 2, 2, 'disponible'),
-(68, 'KCFOM5', 2, 2, ''),
-(69, 'TKJPK5', 1, 2, ''),
-(70, 'QZZ8HM', 1, 2, ''),
-(71, 'RK58YA', 1, 2, ''),
-(72, 'JVCJDY', 1, 2, ''),
-(73, 'FZJ1AT', 1, 2, ''),
-(74, 'QBCV2F', 1, 3, ''),
-(75, 'EEZIXJ', 1, 1, ''),
-(76, '4T398C', 1, 3, ''),
-(77, 'E2UE9Q', 1, 2, ''),
-(78, 'Z7ZLXO', 1, 3, 'si'),
-(79, '80QC16', 1, 1, 'si'),
-(80, 'LIQ2PS', 1, 2, 'si'),
-(81, 'BLT94E', 1, 2, 'si'),
-(82, '4TXMFQ', 1, 1, 'si'),
-(83, '817ZSJ', 1, 1, 'si'),
-(84, 'VZAD61', 1, 1, 'si');
+INSERT INTO `cupones` (`id_cupon`, `codigo`, `id_vecino`, `id_descuento`, `id_empresa`, `estado`) VALUES
+(55, '2PXK0R', 1, 3, 14, 'si'),
+(56, '78XWG7', 1, 1, 1, 'si'),
+(57, 'F0IVQ3', 1, 1, 1, 'no'),
+(58, 'YBUQR4', 1, 2, NULL, '0'),
+(59, 'BM2SHT', 1, 3, NULL, '0'),
+(60, 'A7LFHD', 2, 3, NULL, '0'),
+(61, 'N2JMH0', 2, 2, NULL, '0'),
+(62, 'JNKQXK', 2, 2, NULL, '0'),
+(63, 'MMFLG4', 2, 2, NULL, '0'),
+(64, 'O0B1IE', 2, 3, NULL, '0'),
+(65, 'IIQNBC', 2, 2, NULL, 'usada'),
+(66, 'ZWR7CN', 2, 3, NULL, 'vencida'),
+(67, 'M4GR73', 2, 2, NULL, 'disponible'),
+(68, 'KCFOM5', 2, 2, NULL, ''),
+(69, 'TKJPK5', 1, 2, NULL, ''),
+(70, 'QZZ8HM', 1, 2, NULL, ''),
+(71, 'RK58YA', 1, 2, NULL, ''),
+(72, 'JVCJDY', 1, 2, NULL, ''),
+(73, 'FZJ1AT', 1, 2, NULL, ''),
+(74, 'QBCV2F', 1, 3, NULL, ''),
+(75, 'EEZIXJ', 1, 1, NULL, ''),
+(76, '4T398C', 1, 3, NULL, ''),
+(77, 'E2UE9Q', 1, 2, NULL, ''),
+(78, 'Z7ZLXO', 1, 3, NULL, 'si'),
+(79, '80QC16', 1, 1, NULL, 'si'),
+(80, 'LIQ2PS', 1, 2, NULL, 'si'),
+(81, 'BLT94E', 1, 2, NULL, 'si'),
+(82, '4TXMFQ', 1, 1, NULL, 'si'),
+(83, '817ZSJ', 1, 1, NULL, 'si'),
+(84, 'VZAD61', 1, 1, NULL, 'si');
 
 -- --------------------------------------------------------
 
@@ -221,7 +222,8 @@ ALTER TABLE `avisos`
 ALTER TABLE `cupones`
   ADD PRIMARY KEY (`id_cupon`),
   ADD KEY `id_vecino` (`id_vecino`),
-  ADD KEY `id_descuento` (`id_descuento`);
+  ADD KEY `id_descuento` (`id_descuento`),
+  ADD KEY `id_empresa` (`id_empresa`);
 
 --
 -- Indices de la tabla `descuentos`
@@ -292,7 +294,8 @@ ALTER TABLE `avisos`
 --
 ALTER TABLE `cupones`
   ADD CONSTRAINT `cupones_ibfk_1` FOREIGN KEY (`id_vecino`) REFERENCES `vecinos` (`id`),
-  ADD CONSTRAINT `cupones_ibfk_2` FOREIGN KEY (`id_descuento`) REFERENCES `descuentos` (`id_descuento`);
+  ADD CONSTRAINT `cupones_ibfk_2` FOREIGN KEY (`id_descuento`) REFERENCES `descuentos` (`id_descuento`),
+  ADD CONSTRAINT `cupones_ibfk_3` FOREIGN KEY (`id_empresa`) REFERENCES `empresas` (`id_empresa`);
 
 --
 -- Filtros para la tabla `descuentos`

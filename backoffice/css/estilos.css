@@ -332,6 +332,54 @@ a{
 }
 
 /*CUPONES*/
+.cont-table-tit{
+    max-width: 200px;
+    background-color: #f7c83c;
+    color: black;
+    font-weight: bold;
+}
+.table-dato{
+    font-size: 12px;
+    height: 40px;
+    width: 120px;
+    max-width: 180px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.table-dato-chico{
+    font-size: 12px;
+    height: 40px;
+    width: 85px;
+    max-width: 100px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.table-dato-status{
+    font-size: 12px;
+    height: 40px;
+    width: 50px;
+    max-width: 100px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.table-datos-top{
+    border-top: 1px solid #f7c83c;
+    border-left: 1px solid #f7c83c;
+    border-right: 1px solid #f7c83c;
+    border-bottom: 1px solid #f7c83c;
+}
+
+tr:nth-child(odd) td { background: #fffdf6; } 
+tr td:hover { background: #fff9e6; }
+
+
+
+.table-datos{
+    border-left: 1px solid #f7c83c;
+    border-right: 1px solid #f7c83c;
+    border-bottom: 1px solid #f7c83c;
+}
 
 .cont-aviso{
     background-color: #ffeebb;
@@ -375,6 +423,9 @@ a{
     text-align: center;
     display: flex;
     align-items: center;
+}
+.icon-status{
+    width: 20px;
 }
 .btn-panel div{
     font-size: 20px;

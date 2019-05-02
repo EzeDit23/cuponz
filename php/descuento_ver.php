@@ -51,13 +51,14 @@
         $select_queryDes = mysqli_query($conexion, $selectDes);
 
         while($dato = mysqli_fetch_array($select_queryDes)) {
+            $id_empresa = $dato['id_empresa'];
             $id_descuento = $dato['id_descuento'];
 
         }
 
        
-        $insertCup="INSERT INTO `cupones` (`id_cupon`, `estado`,`codigo`, `id_vecino`, `id_descuento`) 
-        VALUES (null, 'si', '$code', '$id_vecino', '$id_descuento');";
+        $insertCup="INSERT INTO `cupones` (`id_cupon`, `estado`,`codigo`, `id_vecino`, `id_descuento`, `id_empresa`) 
+        VALUES (null, 'no', '$code', '$id_vecino', '$id_descuento', '$id_empresa');";
 
         $query_insertCup = mysqli_query($conexion, $insertCup);
 
