@@ -11,9 +11,16 @@
         <div class="row sinNada cont-cuenta">
             <div class="col-12 sinNada cont-btns">
                 <h2><i class="fas fa-ticket-alt"></i> CUPONES</h2>
-                <a href=""><div class="btn-gral">
-                    DESCARGAR EXCEL
-                </div></a>
+                <div class="cont-doble-btn">
+                    <a href=""><div class="btn-gral2  btn-agregar">
+                    <i class="fas fa-sync-alt"></i> RECARGAR
+                    </div></a>
+                    <div class="space-20"></div>
+                    <a href=""><div class="btn-gral  btn-agregar">
+                        <i class="fas fa-download"></i> DESCARGAR EXCEL
+                    </div></a>
+                </div>
+             
             </div>
             
             <div class="col-12 sinNada cuenta-cont-datos"> 
@@ -72,8 +79,8 @@
                                     $nombre = $dato['nombre'];
                                     $porcentaje = $dato['porcentaje'];
                                     $sexo = $dato['sexo'];
-                                    $precio = $dato['precio-real'];
-                                    $precioOff = $dato['precio-desc'];
+                                    $precio = $dato['precioreal'];
+                                    $precioOff = $dato['preciodesc'];
                                     $categoria = $dato['categoria'];
 
 

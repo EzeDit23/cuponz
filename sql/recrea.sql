@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-05-2019 a las 22:01:43
+-- Tiempo de generación: 03-05-2019 a las 23:04:32
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 7.3.1
 
@@ -65,7 +65,7 @@ CREATE TABLE `cupones` (
 INSERT INTO `cupones` (`id_cupon`, `codigo`, `id_vecino`, `id_descuento`, `id_empresa`, `estado`) VALUES
 (55, '2PXK0R', 1, 3, 14, 'si'),
 (56, '78XWG7', 1, 1, 1, 'si'),
-(57, 'F0IVQ3', 1, 1, 1, 'no'),
+(57, 'F0IVQ3', 1, 1, 1, 'si'),
 (58, 'YBUQR4', 1, 2, NULL, '0'),
 (59, 'BM2SHT', 1, 3, NULL, '0'),
 (60, 'A7LFHD', 2, 3, NULL, '0'),
@@ -92,7 +92,9 @@ INSERT INTO `cupones` (`id_cupon`, `codigo`, `id_vecino`, `id_descuento`, `id_em
 (81, 'BLT94E', 1, 2, NULL, 'si'),
 (82, '4TXMFQ', 1, 1, NULL, 'si'),
 (83, '817ZSJ', 1, 1, NULL, 'si'),
-(84, 'VZAD61', 1, 1, NULL, 'si');
+(84, 'VZAD61', 1, 1, NULL, 'si'),
+(85, 'D9DFLT', 1, 2, 2, 'no'),
+(86, 'KY0CA6', 1, 3, 1, 'no');
 
 -- --------------------------------------------------------
 
@@ -106,8 +108,9 @@ CREATE TABLE `descuentos` (
   `nombre` varchar(250) DEFAULT NULL,
   `porcentaje` int(6) DEFAULT NULL,
   `sexo` varchar(10) NOT NULL,
-  `precio-real` int(50) NOT NULL,
-  `precio-desc` int(50) NOT NULL,
+  `precioreal` int(50) NOT NULL,
+  `preciodesc` int(50) NOT NULL,
+  `comision` int(50) NOT NULL,
   `id_empresa` int(6) NOT NULL,
   `categoria` varchar(300) NOT NULL,
   `limite` int(6) DEFAULT NULL,
@@ -120,10 +123,11 @@ CREATE TABLE `descuentos` (
 -- Volcado de datos para la tabla `descuentos`
 --
 
-INSERT INTO `descuentos` (`id_descuento`, `codigo`, `nombre`, `porcentaje`, `sexo`, `precio-real`, `precio-desc`, `id_empresa`, `categoria`, `limite`, `cantidad`, `mes`, `link`) VALUES
-(1, 'D8F7S5', '1 Grande de muzza', 30, 'unisex', 200, 170, 1, 'Gastronomia', 10, 10, 'Febrero', 'nose'),
-(2, 'D8S7Q5', '1 remera ', 40, 'mujer', 0, 0, 2, 'Indumentaria', 10, 10, 'febrero', 'nose'),
-(3, 'D8B2S4', '1 Corte masquilino', 20, 'hombre', 0, 0, 1, 'Belleza', 10, 10, 'febrero', 'nose');
+INSERT INTO `descuentos` (`id_descuento`, `codigo`, `nombre`, `porcentaje`, `sexo`, `precioreal`, `preciodesc`, `comision`, `id_empresa`, `categoria`, `limite`, `cantidad`, `mes`, `link`) VALUES
+(1, 'D8F7S5', 'Cartucheta escolar50', 15, 'Unisex', 250, 213, 38, 1, 'Bar & cerveceria', 10, 10, 'Febrero', 'nose'),
+(2, 'D8S7Q5', 'nombre', 40, 'sexo', 0, 0, 0, 2, 'categoria', 10, 10, 'febrero', 'nose'),
+(3, 'D8B2S4', 'Loca', 20, 'Unisex', 400, 320, 80, 1, 'Bar & cerveceria', 10, 10, 'febrero', 'nose'),
+(4, '', 'pizza 3', 20, 'Unisex', 220, 180, 30, 1, 'Gastronomia', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -201,7 +205,7 @@ CREATE TABLE `vecinos` (
 --
 
 INSERT INTO `vecinos` (`id`, `cant_des`, `email`, `clave`, `nombre`, `apellido`, `direccion`, `numero`) VALUES
-(1, 7, 'nada@gmail.com', '7777', 'Marcos', 'Dituri', 'campo de mayo 6249', 0),
+(1, 5, 'nada@gmail.com', '7777', 'Marcos', 'Dituri', 'campo de mayo 6249', 0),
 (2, 41, 'test@user.com', '555', 'Gonza', 'Lala', 'No se aun', 11454),
 (3, 33, 'orotest@user.com', '555', 'otrotest', 'po', 'No se aun', 11454);
 
@@ -259,13 +263,13 @@ ALTER TABLE `avisos`
 -- AUTO_INCREMENT de la tabla `cupones`
 --
 ALTER TABLE `cupones`
-  MODIFY `id_cupon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
+  MODIFY `id_cupon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
 
 --
 -- AUTO_INCREMENT de la tabla `descuentos`
 --
 ALTER TABLE `descuentos`
-  MODIFY `id_descuento` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_descuento` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `empresas`

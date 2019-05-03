@@ -7,4 +7,7 @@
 				"",
 				"recrea"
 				);
+
+	mysqli_set_charset($conexion, 'utf8'); //linea a colocar
+
 ?>

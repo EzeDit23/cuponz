@@ -8,7 +8,6 @@
 
     $mostrar = "SELECT * FROM `empresas` WHERE id_empresa=$id_empresa";
 
-
     // 3. Ejecutar la query
     $mostrar_ej = mysqli_query(
                 $conexion, $mostrar
@@ -43,20 +42,34 @@
                         </div></a>
                     </div>
 
-                    <div class="col-12 sinNada cont-aviso">
-                        <p>Aun no tienes promos en el sistema, por lo tanto <b>no apareceras en la app</b>, cree una promo para empezar a ser parte de la <b>red cuponz</b></p>
-                    </div>
-                    <?php
-                    $con_descuento = "SELECT * FROM `descuentos` WHERE id_empresa=$id_empresa";
 
+                    <?php
+                    
+                    $con_descuento = "SELECT * FROM `descuentos` WHERE id_empresa=$id_empresa ORDER BY id_descuento DESC";
 
                     // 3. Ejecutar la query
                     $query_descuento = mysqli_query(
-                                $conexion, $con_descuento
-                                );
+                        $conexion, $con_descuento
+                    );
 
                     $row_cnt = mysqli_num_rows($query_descuento);
                     // 4. Verificar si funcionó
+                    
+                    if($row_cnt == 0){
+                        echo "<div class='col-12 sinNada cont-aviso'>";
+                        echo    "<p>Aun no tienes promos en el sistema, por lo tanto <b>no apareceras en la app</b>, cree una promo para empezar a ser parte de la <b>red cuponz</b></p>";
+                        echo  "</div>";
+
+                    }
+                    $donde = $_SERVER['HTTP_REFERER'];
+                    echo $donde;
+                    if($donde == "http://localhost/cuponz/cuponz/backoffice/editar-descuento.php?"){
+                        
+                        echo "<div class='col-12 sinNada cont-aviso-ver'>";
+                        echo    "<p><i class='fas fa-check-circle'></i> Cambios guardados con exito!</b></p>";
+                        echo  "</div>";
+                    }
+                         
                     
                     echo "<div class='col-12 sinNada cuenta-cont-datos'>";
                     echo "<h2 class='p-tit'>Promos activas ($row_cnt)</h2>";
@@ -66,11 +79,10 @@
                         $nombreDescuento = $dato['nombre'];
                         $porcentaje = $dato['porcentaje'];
                         $sexo = $dato['sexo'];
-                        $precio = $dato['precio-real'];
-                        $precio_desc = $dato['precio-desc'];
+                        $precio = $dato['precioreal'];
+                        $precio_desc = $dato['preciodesc'];
                         $id_empresa = $dato['id_empresa'];
-                        $categoria = $dato['categoria'];
-
+                        $categoria = $dato['categoria']
                         
                     ?>
 
@@ -96,15 +108,16 @@
                               
                                 <div class='col-2 sinNada'>
                                     <div class='row sinNada'>
-                                        <?php echo "<a class='btn-panel' href='editar-descuento.php?id_descuento=$id_descuento'><div class='col-12 sinNada'>EDITAR</div></a>";?>
-                                        <a class='btn-panel' href='#'><div class='col-12 sinNada'>ELIMINAR</div></a>
+                                        <?php echo "<a class='btn-panel' href='editar-descuento.php?id_descuento=$id_descuento'><div class='col-12 sinNada'><i class='far fa-edit'></i> EDITAR</div></a>";?>
+                                        <a class='btn-panel' href='#'><div class='col-12 sinNada'><i class="far fa-trash-alt"></i> ELIMINAR</div></a>
                                       
                                     </div>
                                 </div>
                             </div>
                         </div>
                     <?php
-                  /*
+
+                    /*
                         echo "<div class='col-lg-12 sinNada'>";
                         echo "<div class='row sinNada cont-promo'>";
                         echo    "<div class='col-4'><b>Promo:</b></div><div class='col-4'><span> $nombreDescuento</span></div>";
@@ -113,14 +126,15 @@
                 
                         echo    "<h2><b>Categoria:</b> $categoria</h2>";
                         echo "</div>";
-                        echo "</div>";*/
+                        echo "</div>";
+                    */
 
-                    }
+                    
                     ?>
-        
-            
         <?php
-
+            }
+        
+        
    
     } else {
         echo "ALgo pasa con el SQL";
