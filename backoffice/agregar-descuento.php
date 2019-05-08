@@ -1,5 +1,4 @@
 <?php
-    $id_descuento = $_GET['id_descuento'];
     include("php/conexion.php");
     include("php/sesion.php");
 
@@ -38,36 +37,20 @@
             <div class="col-10 sinNada">
                 <div class="row sinNada cont-cuenta">
                     <div class="col-12 sinNada cont-btns">
-                        <h2><a style="color:#86498c" href="mispromos.php"><i class="fas fa-store"></i> MIS PROMOS</a> - <span> EDITAR</span></h2>
+                        <h2><a style="color:#86498c" href="mispromos.php"><i class="fas fa-store"></i> MIS PROMOS</a> - <span> AGREGAR PROMO</span></h2>
                         <a href=""><div class="btn-gral btn-agregar">
                             <i class="fas fa-chevron-left"></i> ATRAS
                         </div></a>
                     </div>
 
                     <?php
-                    $con_descuento = "SELECT * FROM `descuentos` WHERE id_descuento=$id_descuento";
-
-                    // 3. Ejecutar la query
-                    $query_descuento = mysqli_query(
-                                $conexion, $con_descuento
-                                );
-
-                    $row_cnt = mysqli_num_rows($query_descuento);
+                
                     // 4. Verificar si funcionó
                     
                     echo "<div class='col-12 sinNada cuenta-cont-datos'>";
 
 
-                    while($dato = mysqli_fetch_array($query_descuento)) {
-                        $id_descuento = $dato['id_descuento'];
-                        $nombreDescuento = $dato['nombre'];
-                        $porcentaje = $dato['porcentaje'];
-                        $sexo = $dato['sexo'];
-                        $precio = $dato['precioreal'];
-                        $precio_desc = $dato['preciodesc'];
-                        $comision = $dato['comision'];
-                        $id_empresa = $dato['id_empresa'];
-                        $categoria = $dato['categoria'];
+
 
                         
                     ?>
@@ -78,12 +61,12 @@
 
                                 </div>-->
                                 <div class='col-12 sinNada'>
-                                    <form class='row sinNada cont-datos-cup' action="php/guardar-editar-descuento.php" method="POST">
+                                    <form class='row sinNada cont-datos-cup' action="php/agregar-descuento.php" method="POST">
                                         <div class="col-12 sinnada">
-                                            <input class="oculto" name="id_descuento" type="number" value="<?php echo $id_descuento;?>">
+                                            <input class="oculto" name="id_descuento" type="number" value="">
                                             <div class="row sinNada cont-edit-sec">
                                                 <div class='col-2 sinNada'><b>Promo:</b></div>
-                                                <input class='col-4 sinNada in-comun' type="text" name="nombre" id="" value="<?php echo $nombreDescuento;?>" placeholder="<?php echo $nombreDescuento;?>">
+                                                <input class='col-4 sinNada in-comun' type="text" name="nombre" id="" value="">
                                                 <div class="col-6 sinNada  txt-detalle"><span>Titulo principal que se visiualizara como referencia</span></div>
                                             </div>
 
@@ -92,7 +75,7 @@
                                                 <div class="col-2 sinNada">
                                                     <div class="row sinNada">
                                                         <div class="col-2 sinNada cont-precio"><span>$</span></div>
-                                                        <input class="col-10 sinNada pesoBruto in-precio" name="precioReal" type="number" value="<?php echo $precio;?>">
+                                                        <input class="col-10 sinNada pesoBruto in-precio" name="precioReal" type="number" value="200">
                                                     </div>
                                                 </div>
                                                 
@@ -100,7 +83,7 @@
                                                 <div class="col-2 sinNada  txt-detalle"><span>Minimo ($200)</span></div>
                                                 <div class='col-2 sinNada txt-detalle'><b>Descuento:</b></div>
                                                 <select class="merma col-3"  name="porcentaje" id="select-desc">
-                                                    <option type="number" class="merma" id="option-desc-0" value="<?php echo $porcentaje;?>"><?php echo "$porcentaje% de descuento <strong>(actual)</strong>";?></option>
+                                                    <option type="number" class="merma" value="0" id="option-desc-0" >Seleccionar</option>
                                                     <option type="number" class="merma" value="15">15% de descuento</option>
                                                     <option type="number" class="merma" value="20">20% de descuento</option>
                                                     <option type="number" class="merma" value="25">25% de descuento</option>
@@ -112,7 +95,7 @@
 
                                                 <div class="col-2 sinNada">
                                                     <div class="row sinNada">
-                                                        <div class="col-2 sinNada cont-precio mt-10"><span>$</span></div><input class="val_dsc col-10 sinNada mt-10 in-precio" name="precioDesc" value="<?php echo $precio_desc;?>" type="text" readonly="readonly" >
+                                                        <div class="col-2 sinNada cont-precio mt-10"><span>$</span></div><input class="val_dsc col-10 sinNada mt-10 in-precio" name="precioDesc" value="" type="text" readonly="readonly" >
                                                     </div>
                                                 </div>
 
@@ -121,7 +104,7 @@
                                                 <div class='col-2 sinNada txt-detalle mt-10'><b>Comision:</b></div>
                                                 <div class="col-2 sinNada">
                                                     <div class="row sinNada">
-                                                        <div class="col-2 sinNada cont-precio mt-10"><span>$</span></div><input class="neto col-10 sinNada mt-10 in-precio" name="comision" value="<?php echo $comision;?>" type="text" readonly="readonly" >
+                                                        <div class="col-2 sinNada cont-precio mt-10"><span>$</span></div><input class="neto col-10 sinNada mt-10 in-precio" name="comision" value="" type="text" readonly="readonly" >
                                                     </div>
                                                 </div>
                                                 
@@ -133,7 +116,7 @@
                                             <div class="row sinNada cont-edit-sec">
                                                 <div class='col-2 sinNada'><b>Categoria:</b></div>
                                                 <select class='col-4 sinNada' name="categoria" id="select-cat">
-                                                    <option id="option-cat-0" value="<?php echo $categoria;?>"><?php echo "$categoria (actual)";?></option>
+                                                    <option id="option-cat-0" value="0">Seleccionar</option>
                                                     <option value="Bar & cerveceria">Bar & cerveceria</option>
                                                     <option value="Belleza">Belleza</option>
                                                     <option value="Bazar">Bazar</option>
@@ -179,8 +162,7 @@
                         echo    "<h2><b>Categoria:</b> $categoria</h2>";
                         echo "</div>";
                         echo "</div>";*/
-
-                    }
+                    
                     ?>
         
             

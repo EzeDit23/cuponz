@@ -37,7 +37,7 @@
                 <div class="row sinNada cont-cuenta">
                     <div class="col-12 sinNada cont-btns">
                         <h2><i class="fas fa-store"></i> MIS PROMOS</h2>
-                        <a href=""><div class="btn-gral btn-agregar">
+                        <a href="agregar-descuento.php"><div class="btn-gral btn-agregar">
                             <i class="fas fa-plus"></i> AGREGAR PROMO
                         </div></a>
                     </div>
@@ -96,7 +96,7 @@
                                         <div class='col-4 sinNada'><b>Promo:</b></div>
                                         <div class='col-8 sinNada'><span><?php echo $nombreDescuento;?></span></div>
                                         <div class='col-4 sinNada'><b>Porcentaje:</b></div>
-                                        <div class='col-8 sinNada'><span><?php echo "$porcentaje%";?></span></div>
+                                        <div class='col-8 sinNada'><span><?php echo "$porcentaje% de descuento";?></span></div>
                                         <div class='col-4 sinNada'><b>Precio:</b></div>
                                         <div class='col-8 sinNada'><span><?php echo "$$precio_desc - ";?></span><span class="pre-desc"><?php echo "$$precio";?></span></div>
                                         <div class='col-4 sinNada'><b>Categoria:</b></div>

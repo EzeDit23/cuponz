@@ -9,6 +9,9 @@
 p, a, h1, h2, h3, h4, span{
     color: #938a94;
 }
+.oculto{
+    visibility: hidden;
+}
 
 .mt-10{
     margin-top: 10px!important;
@@ -441,11 +444,10 @@ tr td:hover { background: #fff9e6; }
     padding-right: 20px;
     border: 2px solid #f7c83c;
     height: 200px;
-    border-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
-.cont-datos-cup{
-    padding: 20px;
-}
+
 .cont-foto-cup{
     width: 200px!important;
     height: 100%;
@@ -538,11 +540,17 @@ tr td:hover { background: #fff9e6; }
     font-size: 20px;
 }
 
-.cont-datos-cup input{
+.cont-datos-cup{
+    padding: 20px;
+}
+
+.in-comun{
     outline: none;
     background-color: transparent;
     border-radius: 8px;
-    border: 2px solid rgb(204, 204, 204)!important;
+    border-top: 2px solid rgb(204, 204, 204)!important;
+    border-right: 2px solid rgb(204, 204, 204)!important;
+    border-left: 2px solid rgb(204, 204, 204)!important;
     border-bottom: 2px solid rgb(204, 204, 204)!important;
     padding-left: 10px;
     height: 40px;
@@ -553,14 +561,76 @@ tr td:hover { background: #fff9e6; }
     outline: none;
     background-color: transparent;
     border-radius: 8px;
-    border: 2px solid rgb(204, 204, 204)!important;
+    border-top: 2px solid rgb(204, 204, 204)!important;
+    border-right: 2px solid rgb(204, 204, 204)!important;
+    border-left: 2px solid rgb(204, 204, 204)!important;
+    border-bottom: 2px solid rgb(204, 204, 204)!important;
     padding-left: 10px;
     height: 40px;
     border: none;
     transition: all 1s;
 }
-.cont-datos-cup select:hover, .cont-datos-cup input:hover{
+.cont-datos-cup select:hover, .in-comun:hover{
     border-bottom: 2px solid #653769!important;
+}
+
+
+
+
+
+/*inputs con signo $ */
+
+.cont-datos-pe-cup{
+    padding: 20px;
+}
+
+.in-precio {
+    outline: none;
+    background-color: transparent;
+
+    border-bottom-right-radius: 8px!important;
+    border-top-right-radius: 8px!important;
+    border-bottom-left-radius: 0px!important;
+    border-top-left-radius: 0px!important;
+
+    border-top: 2px solid rgb(204, 204, 204)!important;
+    border-right: 2px solid rgb(204, 204, 204)!important;
+    border-left: 0px solid rgb(204, 204, 204)!important;
+    border-bottom: 2px solid rgb(204, 204, 204)!important;
+    
+
+    padding-left: 10px;
+    height: 40px;
+    transition: all 1s;
+}
+
+.in-precio:hover{
+    border-bottom: 2px solid #653769!important;
+}
+
+.cont-precio{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    background-color: transparent;
+    border-bottom-right-radius: 0px!important;
+    border-top-right-radius: 0px!important;
+    border-bottom-left-radius: 8px!important;
+    border-top-left-radius: 8px!important;
+
+    border: 2px solid #653769!important;
+    border-right: 0px solid #653769!important;
+
+    padding-left: 0px;  
+    height: 40px;
+    width: 30px;
+    border: none;
+    transition: all 1s;
+    background-color: #86498c;
+}
+.cont-precio span{
+    color: white;
 }
 .cont-edit-sec{
     display: flex;

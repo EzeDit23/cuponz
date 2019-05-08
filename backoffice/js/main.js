@@ -16,13 +16,13 @@ jQuery('.pesoBruto , .merma').on('change',function()
 {
 
       //Obtengo el valor bruto
-      var bruto = $(this).closest('.producto').children('.pesoBruto').val();
+      var bruto = $(this).closest('.producto ').find('.pesoBruto').val();
       //Obtengo %Merma
-      var merma = $(this).closest('.producto').children('.merma').val();
+      var merma = $(this).closest('.producto').find('.merma').val();
 
       //En caso de que alguno de los dos este en blanco, el neto estará en blanco.
       if(bruto.length==0 || merma.length==0){
-        $(this).closest('.producto').children('.neto').val("");
+        $(this).closest('.producto').find('.neto').val("");
         return;
       }
 
@@ -31,7 +31,16 @@ jQuery('.pesoBruto , .merma').on('change',function()
       var val_dsc = Math.abs(neto-bruto);
       
       //Lo muestro en el div neto
-      $(this).closest('.producto').children('.neto').val(neto);
-      $(this).closest('.producto').children('.val_dsc').val(val_dsc);
+      $(this).closest('.producto').find('.neto').val(neto);
+      $(this).closest('.producto').find('.val_dsc').val(val_dsc);
 
 });
+
+
+$("#select-desc").click(function(){
+  $("#option-desc-0").hide();
+})
+
+$("#select-cat").click(function(){
+  $("#option-cat-0").hide();
+})
