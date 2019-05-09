@@ -54,9 +54,6 @@ include("components/head.php");
                         <div class="col-1 sinNada"></div>
                     <input class="col-4 sinNada inp-comun" type="number" name="numero" id="" placeholder="N°"><br>
                     </div>
-                    
-                    
-             
             </div>
             
 

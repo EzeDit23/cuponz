@@ -556,6 +556,7 @@ tr td:hover { background: #fff9e6; }
     height: 40px;
     border: none;
     transition: all 1s;
+    font-size: 16px;
 }
 .cont-datos-cup select{
     outline: none;

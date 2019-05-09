@@ -37,7 +37,7 @@
                 <div class="row sinNada cont-cuenta">
                     <div class="col-12 sinNada cont-btns">
                         <h2><i class="fas fa-user-circle"></i> CUENTA</h2>
-                        <a href=""><div class="btn-gral btn-agregar">
+                        <a href="editar-cuenta.php"><div class="btn-gral btn-agregar">
                         <i class="far fa-edit"></i> EDITAR DATOS
                         </div></a>
                     </div>
