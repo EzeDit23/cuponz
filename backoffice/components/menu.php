@@ -1,6 +1,7 @@
 <div class="row sinNada">
 
-        
+<div class="col-2 sinNada"> 
+</div>
 <div class="col-2 sinNada p-menu">  
     <div class="row sinNada p-cont-perfil">
         <div class="col-12 sinNada">

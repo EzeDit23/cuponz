@@ -44,7 +44,7 @@ input[type=number] {
 .btn-gral-input:hover{
     color: #f7c83c!important;
     border-bottom: 0px solid #653769!important;
-    background-color: #653769!important;
+    background-color: #ad6eb3!important;
     transition: all 1s!important;
 }
 
@@ -187,6 +187,7 @@ a{
 /*PANEL*/
 
 .p-menu{
+    position: fixed;
     height: 100vh;
     max-height: 100%;
     background-color: #86498c;

@@ -58,7 +58,7 @@
 
                                 </div>-->
                                 <div class='col-12 sinNada'>
-                                    <form class='row sinNada cont-datos-cup' action="php/guardar-editar-descuento.php" method="POST">
+                                    <form class='row sinNada cont-datos-cup' action="php/editar-cuenta.php" method="POST">
                                         <div class="col-12 sinnada">
                                             <input class="oculto" name="id_descuento" type="number" value="<?php echo $id_descuento;?>">
                                             
@@ -74,7 +74,7 @@
 
                                             <div class="row sinNada cont-edit-sec">
                                                 <div class='col-2 sinNada'><b>Categoria:</b></div>
-                                                    <select class="merma col-5"  name="porcentaje" id="select-desc">
+                                                    <select class="merma col-5"  name="categoria" id="select-desc">
                                                         <option type="text" class="merma" id="option-desc-0" value="<?php echo $categoria;?>"><?php echo "$categoria  (actual)";?></option>
                                                         <option value="Bar & cerveceria">Bar & cerveceria</option>
                                                         <option value="Belleza">Belleza</option>
@@ -89,21 +89,29 @@
 
                                              <div class="row sinNada cont-edit-sec">
                                                 <div class='col-2 sinNada'><b>Localidad:</b></div>
-                                                <select class='col-5 sinNada' name="categoria" id="select-cat">
+                                                <select class='col-5 sinNada' name="localidad" id="select-cat">
                                                     <option id="option-cat-0" value="<?php echo $localidad;?>"><?php echo "$localidad (actual)";?></option>
                                                     <option value="Martin Coronado">Martin Coronado</option>
                                                     <option value="Palomar">Palomar</option>
-                                                    <option value="Bazar">Caseros</option>
+                                                    <option value="Bazar">Caseros</option>  
                                                     <option value="Villa Bosch">Villa Bosch</option>                           
                                                 </select>
 
-                                                <div class='col-2 sinNada txt-detalle'><b>Nº:</b></div>
-                                                <input class='col-3 sinNada in-comun' type="text" name="nombre" id="" value="<?php echo $numero;?>" placeholder="<?php echo $numero;?>">
+                                            
                                             </div>
 
                                             <div class="row sinNada cont-edit-sec">
+                                                <div class='col-2 sinNada'><b>Direccion:</b></div>
+                                                <input class='col-5 sinNada in-comun' type="text" name="direccion" id="" value="<?php echo $direccion;?>" placeholder="<?php echo $direccion;?>">
+
+                                                <div class='col-2 sinNada txt-detalle'><b>Nº:</b></div>
+                                                <input class='col-3 sinNada in-comun' type="text" name="numero" id="" value="<?php echo $numero;?>" placeholder="<?php echo $numero;?>">
+                                            </div>
+
+
+                                            <div class="row sinNada cont-edit-sec">
                                                 <div class='col-2 sinNada'><b>Comentario:</b></div>
-                                                <input class='col-10 sinNada in-comun' type="text" name="nombre" id="" value="<?php echo $comentario;?>" placeholder="<?php echo $comentario;?>">
+                                                <input class='col-10 sinNada in-comun' type="text" name="comentario" id="" value="<?php echo $comentario;?>" placeholder="<?php echo $comentario;?>">
                                               
                                             </div><br>
                                                  
@@ -114,23 +122,23 @@
 
                                             <div class="row sinNada cont-edit-sec">
                                                 <div class='col-2 sinNada'><b>Sitio Web:</b></div>
-                                                <input class='col-10 sinNada in-comun' type="text" name="nombre" id="" value="<?php echo $sitioweb;?>" placeholder="<?php echo $sitioweb;?>">
+                                                <input class='col-10 sinNada in-comun' type="text" name="sitioweb" id="" value="<?php echo $sitioweb;?>" placeholder="<?php echo $sitioweb;?>">
                                             </div>
 
                                             
                                             <div class="row sinNada cont-edit-sec">
                                                 <div class='col-2 sinNada'><b>Facebook:</b></div>
-                                                <input class='col-10 sinNada in-comun' type="text" name="nombre" id="" value="<?php echo $facebook;?>" placeholder="<?php echo $facebook;?>">
+                                                <input class='col-10 sinNada in-comun' type="text" name="face" id="" value="<?php echo $facebook;?>" placeholder="<?php echo $facebook;?>">
                                             </div>
                                                                         
                                             <div class="row sinNada cont-edit-sec">
                                                 <div class='col-2 sinNada'><b>Instagram:</b></div>
-                                                <input class='col-10 sinNada in-comun' type="text" name="nombre" id="" value="<?php echo $instagram;?>" placeholder="<?php echo $instagram;?>">
+                                                <input class='col-10 sinNada in-comun' type="text" name="instagram" id="" value="<?php echo $instagram;?>" placeholder="<?php echo $instagram;?>">
                                             </div>
                                        
                                             <div class="row sinNada cont-edit-sec">
                                                 <div class='col-2 sinNada'><b>Twitter:</b></div>
-                                                <input class='col-10 sinNada in-comun' type="text" name="nombre" id="" value="<?php echo $twitter;?>" placeholder="<?php echo $twitter;?>">
+                                                <input class='col-10 sinNada in-comun' type="text" name="twitter" id="" value="<?php echo $twitter;?>" placeholder="<?php echo $twitter;?>">
                                             </div>
                                      
                                             <div class="row sinNada cont-btns-edit">
