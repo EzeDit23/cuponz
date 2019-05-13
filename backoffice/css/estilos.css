@@ -355,9 +355,12 @@ a{
 /*CUPONES*/
 .cont-table-tit{
     max-width: 200px;
-    background-color: #f7c83c;
+    background-color: #653769;
     font-weight: bold;
-    color: #653769;
+    color: white;
+}
+.cont-table-tit th i{
+    color: #f7c83c;
 }
 .table-dato{
     font-size: 12px;
@@ -393,25 +396,25 @@ a{
     padding-right: 10px;
 }
 .table-datos-top{
-    border-top: 1px solid #f7c83c;
-    border-left: 1px solid #f7c83c;
-    border-right: 1px solid #f7c83c;
-    border-bottom: 1px solid #f7c83c;
+    border-top: 1px solid #653769;
+    border-left: 1px solid #653769;
+    border-right: 1px solid #653769;
+    border-bottom: 1px solid #653769;
 }
 
-tr:nth-child(odd) td { background: #fffdf6; } 
-tr td:hover { background: #fff9e6; }
+tr:nth-child(odd) td { background: #fef6ff; } 
+tr td:hover { background: #feefff; }
 
 
 
 .table-datos{
-    border-left: 1px solid #f7c83c;
-    border-right: 1px solid #f7c83c;
-    border-bottom: 1px solid #f7c83c;
+    border-left: 1px solid #653769;
+    border-right: 1px solid #653769;
+    border-bottom: 1px solid #653769;
 }
 
 .cont-aviso{
-    background-color: #ffeebb;
+    background-color: #f8d1fb;
     margin-bottom: 30px;
     width: 100%;    
     text-align: center;
